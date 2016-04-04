@@ -1,0 +1,17 @@
+#results {
+  display: none;
+}
+
+#result h5 {
+  display: none;
+}
+
+.result-location{
+  cursor: pointer;
+  color: purple;
+}
+.result-location:hover{
+  text-decoration: underline;
+  font-variant: small-caps;
+  font-size: 20px;
+}

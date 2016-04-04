@@ -6,14 +6,6 @@ var Places = function(location, landmark, time, notes){
     this.newNotes = notes;
 };
 
-var Places.prototype.everything = function(Places){
-
-};
-
-
-
-
-
 // user interface logic
 $(document).ready(function(){
   $("form#blank").submit(function(event){
@@ -24,16 +16,20 @@ $(document).ready(function(){
     var inputTimeOfYear = $("input#userTime").val();
     var inputNotes = $("input#userNotes").val();
 
+    var newPlaces = new Places(inputLocation, inputLandmark, inputTimeOfYear, inputNotes);
 
+    $("#location-list").append("<li span class='result-location'>"+ "Location: " + newPlaces.newLocation +"</span></li>");
+
+    $(".result-location").last().click(function(){
+      $("#results").show();
+      $(".result-landmark").text(newPlaces.newLandmark);
+      $(".result-time").text(newPlaces.newTime);
+      $(".result-note").text(newPlaces.newNotes);
+    });
 
     $("input#userLocation").val("");
     $("input#userLandmark").val("");
     $("input#userTime").val("");
     $("input#userNotes").val("");
   });
-
-
-
-
-
 });
