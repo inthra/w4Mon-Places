@@ -18,7 +18,7 @@ $(document).ready(function(){
 
     var newPlaces = new Places(inputLocation, inputLandmark, inputTimeOfYear, inputNotes);
 
-    $("#location-list").append("<li span class='result-location'>"+ "Location: " + newPlaces.newLocation +"</span></li>");
+    $("#location-list").append("<li><span class='result-location'>"+ "Location: " + newPlaces.newLocation +"</span></li>");
 
     $(".result-location").last().click(function(){
       $("#results").show();
